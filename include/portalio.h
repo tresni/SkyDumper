@@ -10,7 +10,7 @@
 #include <fcntl.h>
 
 
-#include "hidapi.h"
+#include "hidapi/hidapi.h"
 #include "skylander.h"
 
 #define rw_buf_size  0x21
@@ -18,7 +18,7 @@
 #define SKYLANDER_SIZE 1024
 #define MAX_STR 255
 
-#define DEBUG 0
+#define DEBUG 1
 
 typedef struct {
     unsigned char buf[rw_buf_size];
@@ -44,7 +44,7 @@ public:
 
     unsigned char PortalStatus();
 
-private:
+protected:
     void OpenPortalHandle();
 
     void Write(RWBlock *);
