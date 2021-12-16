@@ -10,7 +10,7 @@
 #include <fcntl.h>
 
 
-#include "hidapi/hidapi.h"
+#include <hidapi.h>
 #include "skylander.h"
 
 #define rw_buf_size  0x21
