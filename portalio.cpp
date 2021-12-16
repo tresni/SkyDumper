@@ -80,6 +80,9 @@ void PortalIO::OpenPortalHandle() {
         printf("Cannot Find Portal USB.\n");
         exit(1);
     }
+
+    /* HIDAPI will only do a control transfer if it thinks the output endpoint is 0 */
+    ((hid_device_head *)hPortalHandle)->output_endpoint = 0;
 }
 
 
